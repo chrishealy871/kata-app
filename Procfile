@@ -1,1 +1,1 @@
-web: gunicorn BellyBox.wsgi.application
+web: gunicorn BellyBox.wsgi:application
