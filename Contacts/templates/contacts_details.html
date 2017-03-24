@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{%  block content %}
+ <div class="row">
+            <div class="col-md-2 col-sm-3 text-center">
+                <a class="story_img" href="#">
+                    <img src="http://placehold.it/100" style="width:100px; height:100px; background-color: #12ABB2; color: #ffffff;" class="img-circle">
+                </a>
+            </div>
+            <div class="col-md-10 col-sm-9">
+                <h3>{{ contact.first_name }}  {{ contact.last_name }}</h3>
+                <p> {{ contact.email }}</p>
+                <button class="btn btn-default" onclick="location.href='{% url 'edit_contact' contact.id %}'">Edit</button>
+
+{% endblock %}
