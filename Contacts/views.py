@@ -6,7 +6,7 @@ from .forms import ContactForm
 # Create your views here.
 def contacts_list(request):
     contacts = Contact.objects.all()
-    return render(request, "contacts_list.html", {'contact': contacts})
+    return render(request, "contacts_list.html", {'contacts': contacts})
 
 
 def contact_details(request, id):
@@ -32,8 +32,8 @@ def edit_contact(request, id):
     if request.method == "POST":
         form = ContactForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
-            contact = form.save(commit=False)
-            contact.save()
+            contacts = form.save(commit=False)
+            contacts.save()
             return redirect(contact_details, contact.pk)
     else:
         form = ContactForm(instance=post)
